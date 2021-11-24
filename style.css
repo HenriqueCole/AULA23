@@ -1,0 +1,15 @@
+th{
+    border: black solid 1px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+td{
+    border: black solid 1px;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+tr{
+    text-align: center;
+}
