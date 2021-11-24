@@ -31,9 +31,12 @@ function showPersonTable() {
     const row = document.createElement('tr');
     const columnName = document.createElement('th');
     const columnUsername = document.createElement('th');
+    const columnBotao = document.createElement('td');
+    
 
     columnName.innerText = 'Name';
     columnUsername.innerText = 'Username';
+
 
     row.appendChild(columnName);
     row.appendChild(columnUsername);
@@ -55,12 +58,21 @@ function getPersonTableRow(name, userName) {
     const row = document.createElement('tr');
     const columnName = document.createElement('td');
     const columnUsername = document.createElement('td');
+    const columnBotao = document.createElement('td');
+    let botao = document.createElement('button');
 
     columnName.innerText = name;
     columnUsername.innerText = userName;
+    columnBotao.appendChild(botao);
+    botao.innerText = 'See Data';
 
     row.appendChild(columnName);
     row.appendChild(columnUsername);
+    row.appendChild(columnBotao);
     return row;
 }
 showPersonTable();
+
+
+
+
