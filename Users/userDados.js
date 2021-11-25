@@ -1,8 +1,8 @@
 let userName = document.location.search;
-userName = userName.substring(1);
+a = userName = userName.substr(1, userName.length);
 
-function getUserGithub(userName) {
-    fetch('https://api.github.com/users/api/search' + userName)
+function getUserGithub(a) {
+    fetch('https://fake-github.herokuapp.com/api/search/' + userName)
         .then(function (resultado) {
             resultado.json().then(function (data) {
                 console.log('User Data:', data);
@@ -13,15 +13,22 @@ function getUserGithub(userName) {
         });
 }
 
+getUserGithub();
+
 function showUserGithub(user) {
     if (!user) return;
     let divName = document.createElement('div');
     divName.innerText = user.login;
+    
+    let divUser = document.createElement('div');
+    divUser.innerText = user.name;
+
     document.body.appendChild(divName);
+    document.body.appendChild(divUser);
 }
 
 function getUserReposGithub(userName) {
-    fetch('https://api.github.com/users/api/search' + userName + '/repos')
+    fetch('https://fake-github.herokuapp.com/api/search/' + userName + '/repos')
         .then(function (resultado) {
             resultado.json().then(function (data) {
                 console.log('Repositories Data:', data);
@@ -30,3 +37,4 @@ function getUserReposGithub(userName) {
             console.log('erro:', erro);
         });
 }
+getUserReposGithub();
