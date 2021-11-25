@@ -60,6 +60,12 @@ function getPersonTableRow(name, userName) {
     const columnUsername = document.createElement('td');
     const columnBotao = document.createElement('td');
     let botao = document.createElement('button');
+    botao.onclick = clickButton;
+
+    function clickButton(){
+        let nomeEscolhido = userName;
+        location.href = "./Users/userPages.html?" + nomeEscolhido;
+    }
 
     columnName.innerText = name;
     columnUsername.innerText = userName;
@@ -71,8 +77,7 @@ function getPersonTableRow(name, userName) {
     row.appendChild(columnBotao);
     return row;
 }
+
+
+
 showPersonTable();
-
-
-
-
