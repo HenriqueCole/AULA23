@@ -210,6 +210,41 @@ function registeryPerson(name, userName) {
     showPersonTable();
 }
 
+var listaAgora = listUser
+
+function showPersonTable2() {
+    const actualTable = document.querySelector('table');
+    if (actualTable) {
+        actualTable.remove();
+    }
+
+    const table = document.createElement('table');
+    const row = document.createElement('tr');
+    const columnName = document.createElement('th');
+    const columnUsername = document.createElement('th');
+    const columnBotao = document.createElement('td');
+
+
+    columnName.innerText = 'Name';
+    columnUsername.innerText = 'Username';
+
+
+    row.appendChild(columnName);
+    row.appendChild(columnUsername);
+    table.appendChild(row);
+
+    listaAgora.forEach(function (element) {
+        console.log('element:', element);
+        const rowTable = getPersonTableRow(
+            element.name,
+            element.userName)
+
+        table.appendChild(rowTable);
+    })
+
+    document.body.appendChild(table);
+}
+
 function procurarNomes() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.querySelector("input");
@@ -217,22 +252,20 @@ function procurarNomes() {
     table = document.querySelector("table");
     tr = table.querySelector("tr");
 
-    console.log("0",tr, tr.length)
+    listaAgora.forEach(function(e){
+        txtValue = e.name
+        if(!(txtValue.toUpperCase().indexOf(filter) > -1)){
+            listaAgora.splice(e, 1)
+        } 
+        console.log(listaAgora)
+    })
 
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td");
-      console.log("1")
-      if (td) {
-        console.log("2")
-        txtValue = td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            console.log("3")
-          tr[i].style.display = "";
-        } else {
-            console.log("4")
-          tr[i].style.display = "none";
-        }
-      }
+    showPersonTable2()
+
+    //tentando fazer filtro
+
+    if(input.value = "none"){
+        showPersonTable()
     }
 }
 
