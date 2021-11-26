@@ -42,8 +42,8 @@ function getUserReposGithub(a) {
                     document.body.appendChild(linha);
                     linha.innerText = element.name;
                     const link = document.createElement('a')
-                    link.href = element.url;
-                    link.innerText = element.url
+                    link.href = element.html_url;
+                    link.innerText = element.html_url
                     linha.appendChild(link);
                 });
             });
