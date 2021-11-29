@@ -195,6 +195,7 @@ function getContentRegesteryPersonModal(removeModal) {
     const footer = document.createElement('div');
     footer.id = 'person-footer';
     const buttonRegistery = document.createElement('button');
+    buttonRegistery.className = 'registrarPessoa';
     buttonRegistery.innerText = 'Registrar';
     function registery() {
         const name = inputNome.value;
