@@ -110,6 +110,7 @@ showPersonTable();
 
 
 let botaoCadastro = document.createElement('button');
+botaoCadastro.className = 'cadastroBotao';
 document.body.appendChild(botaoCadastro);
 botaoCadastro.onclick = clickButtonRegisteryPerson;
 botaoCadastro.innerText = "Cadastrar Pessoa";
@@ -211,6 +212,7 @@ function getContentRegesteryPersonModal(removeModal) {
     buttonRegistery.onclick = registery;
 
     const buttonCancel = document.createElement('button');
+    buttonCancel.className = 'cancelar';
     buttonCancel.innerText = 'Cancelar';
     buttonCancel.onclick = removeModal;
 
