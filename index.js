@@ -1,4 +1,5 @@
 let inputDeProcuraDeNomes = document.createElement('input');
+inputDeProcuraDeNomes.id = 'myInput';
 document.body.appendChild(inputDeProcuraDeNomes);
 
 const listUser = [
@@ -34,8 +35,9 @@ function showPersonTable() {
     const row = document.createElement('tr');
     const columnName = document.createElement('th');
     const columnUsername = document.createElement('th');
-    const columnBotao = document.createElement('td');
-
+    const columnBotao = document.createElement('th');
+    columnBotao.innerText = 'botao'
+    table.id = 'myTable';
 
     columnName.innerText = 'Name';
     columnUsername.innerText = 'Username';
@@ -55,6 +57,28 @@ function showPersonTable() {
     })
 
     document.body.appendChild(table);
+
+    inputDeProcuraDeNomes.onkeyup = myFunction;
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+      
+      
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
 }
 
 function getPersonTableRow(name, userName) {
@@ -244,29 +268,3 @@ function showPersonTable2() {
 
     document.body.appendChild(table);
 }
-
-function procurarNomes() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.querySelector("input");
-    filter = input.value.toUpperCase();
-    table = document.querySelector("table");
-    tr = table.querySelector("tr");
-
-    listaAgora.forEach(function(e){
-        txtValue = e.name
-        if(!(txtValue.toUpperCase().indexOf(filter) > -1)){
-            listaAgora.splice(e, 1)
-        } 
-        console.log(listaAgora)
-    })
-
-    showPersonTable2()
-
-    //tentando fazer filtro
-
-    if(input.value = "none"){
-        showPersonTable()
-    }
-}
-
-inputDeProcuraDeNomes.onkeyup = procurarNomes;

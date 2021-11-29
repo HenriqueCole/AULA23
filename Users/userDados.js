@@ -18,13 +18,16 @@ getUserGithub();
 function showUserGithub(user) {
     if (!user) return;
     let divName = document.createElement('div');
-    divName.innerText = user.login;
+    divName.innerText = 'Usuário: ' + user.login;
 
     let divUserAvatar = document.createElement('img')
     divUserAvatar.src = user.avatar_url;
 
     let divUser = document.createElement('div');
-    divUser.innerText = user.name;
+    divUser.innerText = 'Nome: ' + user.name;
+    if (user.name == null){
+        divUser.innerText = 'Nome: Não informado';
+    }
 
     document.body.appendChild(divName);
     document.body.appendChild(divUser);
@@ -40,7 +43,7 @@ function getUserReposGithub(a) {
                     console.log('Repositories Data:', element.name);
                     const linha = document.createElement('div')
                     document.body.appendChild(linha);
-                    linha.innerText = element.name;
+                    linha.innerText = element.name + ': ';
                     const link = document.createElement('a')
                     link.href = element.html_url;
                     link.innerText = element.html_url
