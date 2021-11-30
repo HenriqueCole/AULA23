@@ -91,7 +91,7 @@ function getPersonTableRow(name, userName) {
 
     function clickButton() {
         let nomeEscolhido = userName;
-        location.href = "./Users/userPages.html?" + nomeEscolhido;
+        location.href = "./userPages.html?" + nomeEscolhido;
     }
 
     columnName.innerText = name;

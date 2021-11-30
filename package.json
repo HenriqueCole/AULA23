@@ -1,0 +1,23 @@
+{
+  "name": "aula23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueCole/AULA23.git"
+  },
+  "author": "HenriqueCole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueCole/AULA23/issues"
+  },
+  "homepage": "https://github.com/HenriqueCole/AULA23#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
