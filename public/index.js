@@ -60,7 +60,7 @@ function showPersonTable() {
 
 
 
-    function myFunction() {
+    /*function myFunction() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
@@ -79,7 +79,7 @@ function showPersonTable() {
                 }
             }
         }
-    }
+    }*/
     function myFunctionUsername() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
